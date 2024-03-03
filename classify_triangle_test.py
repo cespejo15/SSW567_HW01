@@ -1,6 +1,6 @@
 import unittest
 import math
-from Classify_Triangle import BuggyTriangle
+from classify_triangle import BuggyTriangle
 
 class TestTriangles(unittest.TestCase):
     def test_rightTriangle(self):
