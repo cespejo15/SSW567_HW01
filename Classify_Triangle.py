@@ -1,3 +1,4 @@
+"Triangle Classification Function"
 class BuggyTriangle:
     def __init__(self, s1, s2, s3):
         self.a = s1
