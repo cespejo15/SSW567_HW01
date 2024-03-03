@@ -31,9 +31,9 @@ class BuggyTriangle:
                 if self.right_check():
                     triangle = triangle + " and Right Triangle"
                 return triangle
-            if self.b != self.c:
-                triangle = "Scalene Triangle"
-                if self.right_check():
-                    triangle = triangle + " and Right Triangle"
-                return triangle
-        return "Not a special Triangle"
+
+        triangle = "Scalene Triangle"
+        if self.right_check():
+            triangle = triangle + " and Right Triangle"
+        return triangle
+        
