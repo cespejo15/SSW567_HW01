@@ -11,18 +11,17 @@ class BuggyTriangle:
         x = round(self.a ** 2, 4)
         y = round(self.b ** 2, 4)
         z = round(self.c ** 2, 4)
-        if x + y == z:
-            return True
-        else:
-            return False
+        return x + y == z
 
     def classify_triangle(self):
         """Classifies triangle and type"""
+        invalid = "Invalid Triangle"
+        equilat = "Equilateral Triangle"
         if self.a + self.b <= self.c or self.a + self.c <= self.b or self.b + self.c <= self.a:
-            return "Invalid Triangle"
+            return invalid
         elif self.a == self.b:
             if self.b == self.c:
-                return "Equilateral Triangle"
+                return equilat
             elif self.b != self.c:
                 triangle = "Isosceles Triangle"
                 if self.right_check():
