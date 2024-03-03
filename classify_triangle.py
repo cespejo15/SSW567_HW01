@@ -15,14 +15,11 @@ class BuggyTriangle:
 
     def classify_triangle(self):
         """Classifies triangle and type"""
-        invalid = "Invalid Triangle"
-        equilat = "Equilateral Triangle"
-        none = "Not a special Triangle"
         if self.a + self.b <= self.c or self.a + self.c <= self.b or self.b + self.c <= self.a:
-            return invalid
+            return "Invalid Triangle"
         if self.a == self.b:
             if self.b == self.c:
-                return equilat
+                return "Equilateral Triangle"
             if self.b != self.c:
                 triangle = "Isosceles Triangle"
                 if self.right_check():
@@ -39,4 +36,4 @@ class BuggyTriangle:
                 if self.right_check():
                     triangle = triangle + " and Right Triangle"
                 return triangle
-        return none
+        return "Not a special Triangle"
