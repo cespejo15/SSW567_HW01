@@ -11,7 +11,7 @@ class BuggyTriangle:
         x = round(self.a ** 2, 4)
         y = round(self.b ** 2, 4)
         z = round(self.c ** 2, 4)
-        return x + y == z
+        return bool(x + y == z)
 
     def classify_triangle(self):
         """Classifies triangle and type"""
@@ -19,21 +19,21 @@ class BuggyTriangle:
         equilat = "Equilateral Triangle"
         if self.a + self.b <= self.c or self.a + self.c <= self.b or self.b + self.c <= self.a:
             return invalid
-        elif self.a == self.b:
+        if self.a == self.b:
             if self.b == self.c:
                 return equilat
-            elif self.b != self.c:
+            if self.b != self.c:
                 triangle = "Isosceles Triangle"
                 if self.right_check():
                     triangle = triangle + " and Right Triangle"
                 return triangle
-        elif self.a != self.b:
-            if self.b == self.c or self.a == self.c:
+        if self.a != self.b:
+            if self.c in (self.a, self.b):
                 triangle = "Isosceles Triangle"
                 if self.right_check():
                     triangle = triangle + " and Right Triangle"
                 return triangle
-            elif self.b != self.c:
+            if self.b != self.c:
                 triangle = "Scalene Triangle"
                 if self.right_check():
                     triangle = triangle + " and Right Triangle"
