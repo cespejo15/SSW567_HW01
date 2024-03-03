@@ -17,6 +17,7 @@ class BuggyTriangle:
         """Classifies triangle and type"""
         invalid = "Invalid Triangle"
         equilat = "Equilateral Triangle"
+        none = "Not a special Triangle"
         if self.a + self.b <= self.c or self.a + self.c <= self.b or self.b + self.c <= self.a:
             return invalid
         if self.a == self.b:
@@ -38,3 +39,4 @@ class BuggyTriangle:
                 if self.right_check():
                     triangle = triangle + " and Right Triangle"
                 return triangle
+        return none
